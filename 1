@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	float p = -1, pmax = -1;
+	int i, N, c = 0, c1=0, tf = 0, j;
+	cin >> N;
+	int *A[N];
+	for	(i=0; i<N; i++) A[i] = new int[N];
+	cout << "Vvedite elementy matricy: ";
+	for (i = 0; i < N; i++){
+		for (j = 0; j < N; j++)
+			cin >> A[i][j];
+	}
+	
+for (i = 0; i < N; i++) {
+	for (j = 0; j < N; j++) cout << A[i][j]<<"\t";
+	cout<<endl;
+}
+i=0;
+j=0;
+	while (i!=N/2||j!=N/2){
+		for (i=c; i<N-c; ++i){ 
+			cout<<A[i][j]<<" ";
+			if (i==N/2&&j==N/2) break;
+		}	
+		if (i==N/2&&j==N/2) break;
+		i=N-c-1;
+		c++;
+		for (j=c; j<N-c1; ++j){	
+			cout<<A[i][j]<<" ";
+			if (i==N/2&&j==N/2) break;
+		}
+		if (i==N/2&&j==N/2) break;
+		j=N-c;
+		for (i=N-c-1; i>=c; i--){
+			cout<<A[i][j]<<" ";
+			if (i==N/2&&j==N/2) break;
+	}
+	if (i==N/2&&j==N/2) break;
+		for (j=N-c; j>=c; --j)	{
+		cout<<A[i][j]<<" ";
+		if (i==N/2&&j==N/2) break;
+		}
+		if (i==N/2&&j==N/2) break;
+		j=c;
+		c1++;
+	}
+}
