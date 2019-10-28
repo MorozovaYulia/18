@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+	float p = -1, pmax = -1;
+	int i, K=0, N, M, min, c = 0, j, c1=0, s = 0; 
+	float m;
+	cin >> N>>M;
+	int *A[N];
+	for	(i=0; i<M; i++) A[i] = new int[N];
+	cout << "Vvedite elementy matricy: ";
+	for (i = 0; i < M; i++){
+		for (j = 0; j < N; j++)
+			cin >> A[i][j];
+	}
+	
+	for (i=0; i<M; i++){
+		m=i+1;
+	for (j = 0; j < N; j++){
+		 if (A[j][i]%2==0) m=0;
+	}
+	if (m!=0) break;
+}
+
+	cout<<m<<endl;
+}
+
+
